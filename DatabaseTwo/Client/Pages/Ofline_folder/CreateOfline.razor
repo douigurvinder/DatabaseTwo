@@ -1,0 +1,26 @@
+﻿@page "/ofline/create"
+@inject IOflineRepostory o
+@inject NavigationManager navi
+<OflineForm Genr="ben" In="Create22"></OflineForm>
+@code
+  {
+    private Ofline ben = new Ofline();
+    private async Task Create22()
+    {
+        try
+        {
+
+            await o.CreateGenre(ben);
+            navi.NavigateTo("ofline_genre");
+
+        }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+
+        }
+
+    }
+
+}

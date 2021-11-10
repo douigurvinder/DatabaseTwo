@@ -1,0 +1,11 @@
+﻿<h3>OflineForm</h3>
+<EditForm Model="Genr" OnSubmit="In">
+    <InputText @bind-Value="@Genr.Name"></InputText>
+    <InputText @bind-Value="@Genr.Phone_no"></InputText>
+    <InputText @bind-Value="@Genr.Adress"></InputText>
+    <button type="submit">Save</button>
+</EditForm>
+@code {
+    [Parameter] public Ofline Genr { get; set; }
+    [Parameter] public EventCallback In { get; set; }
+}

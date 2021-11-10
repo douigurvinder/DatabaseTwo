@@ -1,0 +1,12 @@
+﻿<h3>GenreForm</h3>
+<EditForm Model="Genre" OnSubmit="On">
+    <InputText @bind-Value="@Genre.Name"></InputText>
+    <InputText @bind-Value="@Genre.Phone_no"></InputText>
+    <InputText @bind-Value="@Genre.Gmail"></InputText>
+   <button type="submit">Save</button>
+</EditForm>
+@code 
+{
+    [Parameter]public Online Genre { get; set; }
+    [Parameter]public EventCallback On { get; set; }
+}

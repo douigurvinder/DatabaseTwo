@@ -1,0 +1,25 @@
+﻿@page "/genre/create"
+@inject IGenreRepostory gen
+@inject NavigationManager navi
+<GenreForm Genre="genre" On="Create" ></GenreForm>
+@code 
+{
+    private Online genre = new Online();
+    private async Task Create()
+    {
+        try
+        {
+
+            await gen.CreateGenre(genre);
+            navi.NavigateTo("genre");
+
+        }
+
+        catch (Exception ex)
+            {
+            Console.WriteLine(ex.Message);
+
+            }
+
+    }
+}
